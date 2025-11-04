@@ -36,7 +36,8 @@ public class Main {
                 String userName = sc.nextLine();
                 System.out.print("Password: ");
                 String password = sc.nextLine();
-                if(authService.login(userName,password)!=null){
+                User x = authService.login(userName,password);
+                if(x!=null){
                     System.out.println("--- Menu User ---\n" +
                             "1. Get user by id\n" +
                             "2. Get all user\n" +
@@ -63,7 +64,7 @@ public class Main {
                             String newPassword = sc.nextLine();
                             System.out.print("Confirm new password: ");
                             String confirmPassword = sc.nextLine();
-                            authService.changePassword(authService.login(userName,password).getId(),newPassword,confirmPassword);
+                            authService.changePassword(x.getId(),newPassword,confirmPassword);
                             break;
                         default:
                             System.out.println("The option does not exist!");

@@ -18,9 +18,8 @@ public class Laptop extends Product {
 
     @Override
     public String getInfo() {
-        return "Laptop{" + super.toString() +
-                "ram='" + ram + '\'' +
-                ", cpu='" + cpu + '\'' +
-                '}';
+        String formatString = "%-30s | %-25s | %-30s | %15.2f | %-25s | %-25s";
+        String format = String.format(formatString, this.getId(), this.getName(), this.getDescription(), this.getPrice(), this.ram, this.cpu);
+        return format;
     }
 }

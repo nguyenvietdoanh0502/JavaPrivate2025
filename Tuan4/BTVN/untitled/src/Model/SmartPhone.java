@@ -23,9 +23,9 @@ public class SmartPhone extends Product{
         else{
             x = "yes";
         }
-        return "SmartPhone{" + super.getInfo() +
-                "has5G=" + x +
-                '}';
+        String formatString = "%-30s | %-25s | %-30s | %15.2f | %-25s ";
+        String format = String.format(formatString, this.getId(), this.getName(), this.getDescription(), this.getPrice(), x);
+        return format;
     }
 
 }

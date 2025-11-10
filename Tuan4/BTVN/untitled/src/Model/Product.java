@@ -53,12 +53,9 @@ public class Product {
     }
 
     public String getInfo() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                '}';
+        String formatString = "%-30s | %-25s | %-30s | %15.2f";
+        String format = String.format(formatString, this.id, this.name, this.description, this.price);
+        return format;
     }
     public Product getByID(String id){
         if(this.id.equals(id)){

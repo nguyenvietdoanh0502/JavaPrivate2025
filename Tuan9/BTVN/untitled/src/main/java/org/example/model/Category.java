@@ -2,15 +2,15 @@ package org.example.model;
 
 import java.util.UUID;
 
-public class Categoty {
+public class Category {
     private String id;
     private String name;
 
-    public Categoty( String name) {
-        this.id = UUID.randomUUID().toString();
+    public Category(String id,String name) {
+        this.id = id;
         this.name = name;
     }
-    public Categoty() {
+    public Category() {
         this.id = UUID.randomUUID().toString();
     }
 
@@ -26,4 +26,11 @@ public class Categoty {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
